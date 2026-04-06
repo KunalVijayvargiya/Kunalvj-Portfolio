@@ -3,9 +3,9 @@ import { Mail, Phone, Github, Linkedin, Send } from "lucide-react";
 
 const contactInfo = [
   { icon: Mail, label: "Kunalvj19@gmail.com", href: "mailto:Kunalvj19@gmail.com" },
-  { icon: Phone, label: "+91 XXXXXXXXXX", href: "#" },
+  { icon: Phone, label: "+91 8302009282", href: "#" },
   { icon: Github, label: "GitHub", href: "https://github.com/KunalVijayvargiya" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/kunal-vijayvargiya-34497233b/" },
 ];
 
 const ContactSection = () => {

@@ -4,6 +4,9 @@ const certs = [
   "Basics of Python Programming",
   "Introduction to Web Development",
   "Fundamentals of Computer Applications",
+  "SQL(Intermediate)", 
+  "Software Engineer Intern", 
+  "CSS (Basics)",
 ];
 
 const CertificationsSection = () => {
