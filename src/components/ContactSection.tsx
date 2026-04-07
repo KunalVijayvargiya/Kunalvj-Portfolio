@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, Github, Linkedin, Send } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 const contactInfo = [
   { icon: Mail, label: "Kunalvj19@gmail.com", href: "mailto:Kunalvj19@gmail.com" },
@@ -11,13 +12,20 @@ const contactInfo = [
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
-    window.open(`mailto:kunalvj19@gmail.com?subject=${subject}&body=${body}`, "_self");
-    setForm({ name: "", email: "", message: "" });
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  await emailjs.send(
+    'service_ijxvemf',
+    'template_lixcy1i',
+    {
+      from_name: form.name,
+      from_email: form.email,
+      message: form.message,
+    },
+    'yky796uD5l3Daophn'
+  );
+  setForm({ name: "", email: "", message: "" });
+};
 
   return (
     <section id="contact" className="section-padding bg-secondary/40">
