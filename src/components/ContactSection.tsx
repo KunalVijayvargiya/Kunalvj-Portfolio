@@ -12,21 +12,29 @@ const contactInfo = [
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-  await emailjs.send(
-    'service_ijxvemf',
-    'template_lixcy1i',
-    {
-      from_name: form.name,
-      from_email: form.email,
-      message: form.message,
-    },
-    'yky796uD5l3Daophn'
-  );
-  setForm({ name: "", email: "", message: "" });
-};
 
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
+    alert("Message sent successfully 🚀");
+    setForm({ name: "", email: "", message: "" });
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send message ❌");
+  }
+};
   return (
     <section id="contact" className="section-padding bg-secondary/40">
       <div className="container-narrow">
