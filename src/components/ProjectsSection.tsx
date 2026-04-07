@@ -13,7 +13,7 @@ const projects = [
       "Responsive interface",
     ],
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
-    live: "https://smart-quiz-system-uuqh.vercel.app",
+    live: "https://smart-quiz-system-zeta.vercel.app/",
     github: "https://github.com/KunalVijayvargiya/Smart-Quiz-System",
   },
 ];
